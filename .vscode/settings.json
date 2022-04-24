@@ -1,0 +1,10 @@
+{
+	"eslint.format.enable": true,
+	"editor.formatOnSave": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.organizeImports": true
+	},
+	"emmet.showSuggestionsAsSnippets": true,
+	"editor.snippetSuggestions": "bottom"
+}
