@@ -22,19 +22,12 @@
 						</h2>
 						<h3 class="text-lg  flex flex-row items-center">
 							Tags
-							<button class="ml-2 text-sm text-gray-200">
-								<svg class="h-2 w-2">
-									<use xlink:href="/assets/icons/add.svg" />
-								</svg>
+							<button class="ml-2 text-sm text-teal-200">
+								<MoeIcon name="add" />
 							</button>
 						</h3>
 						<div class="flex flex-row flex-wrap gap-2 ">
-							<div v-for="tag, i in currentRecipe.tags" :key="i" class="rounded-sm bg-teal-600 px-2 items-center flex flex-row gap-2">
-								{{ tag }}
-								<button class="bg-white rounded-full text-teal-800 h-4 w-4 flex items-center justify-center">
-									<img src="assets/icons/close.svg">
-								</button>
-							</div>
+							<MoeTag v-for="tag, i in currentRecipe.tags" :key="i" :tag="tag" />
 						</div>
 						<h3 class="text-lg">
 							Zutaten
@@ -43,8 +36,8 @@
 							</button>
 						</h3>
 						<div class="flex flex-row flex-wrap gap-2 ">
-							<div v-for="tag, i in currentRecipe.tags" :key="i" class="rounded-sm bg-teal-600 px-2">
-								{{ tag }}
+							<div v-for="ingredient, i in currentRecipe.ingredients" :key="i" class="rounded-sm bg-teal-600 px-2">
+								{{ ingredient }}
 							</div>
 						</div>
 						<h3 class="text-lg">

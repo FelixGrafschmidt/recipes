@@ -22,6 +22,7 @@ module.exports = {
 	rules: {
 		indent: ["error", "tab"],
 		"vue/html-indent": ["error", "tab"],
+		// "vue/no-multiple-template-root": "off",
 		"vue/script-indent": ["error", "tab"],
 		"no-tabs": "off",
 		"max-len": ["error", 240],
