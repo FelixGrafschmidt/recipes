@@ -1,0 +1,39 @@
+{
+	"recipes": [
+		{
+			"name": "Sesam-Zitronen-Lachs",
+			"image": "",
+			"instructions": [
+				"Mischen",
+				"Kochen",
+				"Essen"
+			],
+			"tags": [
+				"fish",
+				"no-carbs"
+			],
+			"ingredients": [
+				{
+					"name": "Lachs",
+					"amount": "",
+					"notes": ""
+				},
+				{
+					"name": "Zitrone",
+					"amount": "",
+					"notes": ""
+				},
+				{
+					"name": "Sesam",
+					"amount": "",
+					"notes": ""
+				}
+			]
+		}
+	],
+	"tags": [
+		"fish",
+		"no-carbs"
+	],
+	"ingredients": []
+}
