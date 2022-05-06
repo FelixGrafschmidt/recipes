@@ -4,27 +4,69 @@
 			"name": "Sesam-Zitronen-Lachs",
 			"image": "",
 			"instructions": [
-				"Mischen",
-				"Kochen",
-				"Essen"
+				"Olivenöl oder Butter im Kochtopf erhitzen.",
+				"Zwiebeln kleinschneiden.",
+				"Zwiebeln mit Reis in den Topf geben. Sofort umrühren, bis der Reis glasig wird.",
+				"Reis mit einem Schuss Weißwein ablöschen und Herd auf die mittlere Hitzestufe stellen.",
+				"Gemüse- oder Fleischbrühe, also unter ständigem Rühren nach und nach hinzugeben (immer dann, wenn die Flüssigkeit im Topf von dem Reis weitgehend aufgenommen worden ist).",
+				"Nach Belieben Salz, Butter und Parmesan hinzugeben."
 			],
 			"tags": [
-				"fish",
-				"no-carbs"
+				"rice"
 			],
 			"ingredients": [
 				{
-					"name": "Lachs",
+					"name": " Bio Risotto Reis",
+					"amount": "50g",
+					"notes": ""
+				},
+				{
+					"name": " Gemüsebrühe Reis Gewürz",
+					"amount": "200ml",
+					"notes": ""
+				},
+				{
+					"name": "Olivenöl",
+					"amount": "1El",
+					"notes": ""
+				},
+				{
+					"name": "Schwarzer Pfeffer",
 					"amount": "",
 					"notes": ""
 				},
 				{
-					"name": "Zitrone",
-					"amount": "",
+					"name": "Weisswein",
+					"amount": "50ml",
+					"notes": "alternativ z.B. Rivella"
+				},
+				{
+					"name": "Parmesan",
+					"amount": "25g",
 					"notes": ""
 				},
 				{
-					"name": "Sesam",
+					"name": "Champignons",
+					"amount": "3",
+					"notes": ""
+				},
+				{
+					"name": "Bundzwiebeln (Frühlingszwiebeln)",
+					"amount": "1",
+					"notes": ""
+				},
+				{
+					"name": "Knoblauchzehen",
+					"amount": "0,5",
+					"notes": ""
+				},
+				{
+					"name": "Butter",
+					"amount": "0,5El",
+					"notes": ""
+				},
+				{
+					"name": "Salz",
 					"amount": "",
 					"notes": ""
 				}
@@ -33,7 +75,8 @@
 	],
 	"tags": [
 		"fish",
-		"no-carbs"
+		"no-carbs",
+		"rice"
 	],
 	"ingredients": []
 }
