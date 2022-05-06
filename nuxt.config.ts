@@ -7,6 +7,7 @@ import eslintPlugin from "vite-plugin-eslint";
 export default defineNuxtConfig({
 	buildModules: ["@unocss/nuxt", "floating-vue/nuxt"],
 	modules: ["@nuxtjs/color-mode"],
+	target: "static",
 	unocss: {
 		presets: [
 			presetWind(),
