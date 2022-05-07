@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"@nuxtjs/color-mode": "3.0.2",
-		"@unocss/nuxt": "0.32.13",
+		"@unocss/nuxt": "0.33.0",
 		"@unocss/reset": "0.32.13",
 		"file-saver": "2.0.5",
 		"floating-vue": "2.0.0-beta.16",
