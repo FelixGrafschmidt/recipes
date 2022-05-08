@@ -159,17 +159,35 @@
 				</div>
 			</section>
 		</div>
+		<div v-if="saving">
+			<div
+				class="h-screen opacity-70 absolute inset-0"
+				@click="saving=false"
+			/>
+			<section class="absolute flex-col flex top-20 left-80 right-80 bg-gray-600 text-gray-200 rounded pb-20 overflow-y-scroll max-h-[80vh]" @click.stop>
+				<div class="flex flex-col px-8 gap-4 pt-4">
+					<h3 class="text-lg font-semibold">
+						Speichern
+					</h3>
+					<input v-model="apiKey" class="w-full text-center text-2xl bg-gray-700 rounded" placeholder="api-key">
+					<button class="rounded-md bg-gray-400 p-2 h-12 text-gray-600 hover:bg-gray-300" @click="triggerSave">
+						Speichern
+					</button>
+				</div>
+			</section>
+		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
 import "@unocss/reset/tailwind.css";
-import { saveAs } from "file-saver";
 import { Ref } from "vue";
 import { Data, newRecipe, Recipe } from "~~/models/interfaces/Recipe";
 
-const data: Data = (await import("~/assets/data.json")).default;
+const data : Data = JSON.parse(await $fetch("https://json.extendsclass.com/bin/2cce09fe81f9") || "{}");
 const editing = ref("");
+const apiKey = ref("");
+const saving = ref(false);
 const newtag = ref("");
 
 const tags = new Set<string>(data.tags);
@@ -177,6 +195,7 @@ const tags = new Set<string>(data.tags);
 const recipe = ref(newRecipe());
 const currentRecipe: Ref<Recipe> = ref(newRecipe());
 const creatingNewRecipe = ref(false);
+
 function createNewRecipe() {
 	creatingNewRecipe.value = true;
 }
@@ -191,7 +210,10 @@ function saveRecipe() {
 }
 function save() {
 	data.tags = [...tags];
-	saveAs(new File([JSON.stringify(data)], "data.json"));
+	saving.value = true;
+}
+async function triggerSave() {
+	await $fetch("https://json.extendsclass.com/bin/2cce09fe81f9", { body: data, method: "PUT", headers: { "Security-key": apiKey.value } });
 }
 function addTag(newTag: string) {
 	newtag.value = "";
