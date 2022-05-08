@@ -4,70 +4,67 @@
 			"name": "Sesam-Zitronen-Lachs",
 			"image": "",
 			"instructions": [
-				"Olivenöl oder Butter im Kochtopf erhitzen.",
-				"Zwiebeln kleinschneiden.",
-				"Zwiebeln mit Reis in den Topf geben. Sofort umrühren, bis der Reis glasig wird.",
-				"Reis mit einem Schuss Weißwein ablöschen und Herd auf die mittlere Hitzestufe stellen.",
-				"Gemüse- oder Fleischbrühe, also unter ständigem Rühren nach und nach hinzugeben (immer dann, wenn die Flüssigkeit im Topf von dem Reis weitgehend aufgenommen worden ist).",
-				"Nach Belieben Salz, Butter und Parmesan hinzugeben."
+				"Lachs mit Olivenöl und Salz marinieren",
+				"Sauce zubereiten:",
+				"Schalotte hacken",
+				"Schalotte, Zitronenschale, Zitronensaft, Honig, Sesamöl, Olivenöl, Sesamsamen, Sal und Pfeffer mischen",
+				"Zitronenscheiben beidseitig kurz anbraten",
+				"Lachs von beiden Seiten ca. 5-6 Minuten braten",
+				"Anrichten und Servieren"
 			],
 			"tags": [
-				"rice"
+				"fish",
+				"no-carbs"
 			],
 			"ingredients": [
 				{
-					"name": " Bio Risotto Reis",
-					"amount": "50g",
-					"notes": ""
-				},
-				{
-					"name": " Gemüsebrühe Reis Gewürz",
-					"amount": "200ml",
-					"notes": ""
-				},
-				{
-					"name": "Olivenöl",
-					"amount": "1El",
-					"notes": ""
-				},
-				{
-					"name": "Schwarzer Pfeffer",
-					"amount": "",
-					"notes": ""
-				},
-				{
-					"name": "Weisswein",
-					"amount": "50ml",
-					"notes": "alternativ z.B. Rivella"
-				},
-				{
-					"name": "Parmesan",
-					"amount": "25g",
-					"notes": ""
-				},
-				{
-					"name": "Champignons",
-					"amount": "3",
-					"notes": ""
-				},
-				{
-					"name": "Bundzwiebeln (Frühlingszwiebeln)",
+					"name": "Lachsfilet",
 					"amount": "1",
 					"notes": ""
 				},
 				{
-					"name": "Knoblauchzehen",
-					"amount": "0,5",
-					"notes": ""
-				},
-				{
-					"name": "Butter",
-					"amount": "0,5El",
+					"name": "Olivenöl",
+					"amount": "1.5 Esslöffel",
 					"notes": ""
 				},
 				{
 					"name": "Salz",
-					"amount": "",
+					"amount": "1.25 Teelöffel",
+					"notes": ""
+				},
+				{
+					"name": "Zitrone",
+					"amount": "1",
+					"notes": ""
+				},
+				{
+					"name": "frischer Bailikum",
+					"amount": "1 Esslöffel",
+					"notes": ""
+				},
+				{
+					"name": "Schalotte",
+					"amount": "1/2",
+					"notes": ""
+				},
+				{
+					"name": "Honig",
+					"amount": "3/4 Teelöffel",
+					"notes": ""
+				},
+				{
+					"name": "Sesamöl",
+					"amount": "1 Esslöffel",
+					"notes": ""
+				},
+				{
+					"name": "Sesamsamen",
+					"amount": "1 Teelöffel",
+					"notes": ""
+				},
+				{
+					"name": "Schwarzer Pfeffer",
+					"amount": "1/4 Teelöffel",
 					"notes": ""
 				}
 			]

@@ -5,10 +5,10 @@
 				<h1 class="text-3xl">
 					Rezepte
 				</h1>
-				<button class="rounded-md bg-gray-400 p-2 mr-4 text-gray-600 hover:bg-gray-300" @click="save">
+				<button class="rounded-md bg-gray-400 p-2 h-12 mr-4 text-gray-600 hover:bg-gray-300" @click="save">
 					Alles speichern
 				</button>
-				<button class="rounded-md bg-gray-400 p-2 text-gray-600 hover:bg-gray-300" @click="createNewRecipe">
+				<button class="rounded-md bg-gray-400 p-2 h-12 text-gray-600 hover:bg-gray-300" @click="createNewRecipe">
 					Neues Rezept
 				</button>
 			</header>

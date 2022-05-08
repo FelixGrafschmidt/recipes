@@ -11,6 +11,7 @@
 			<section class="flex flex-row w-1/2 h-1/4">
 				<textarea
 					v-if="editing === item.index"
+					ref="textarea"
 					v-model="instructions[item.index]"
 					class="bg-gray-700 rounded rounded-r-none p-1 w-48"
 					type="text"
@@ -52,12 +53,18 @@ import draggable from "vuedraggable";
 
 const props = defineProps({ instructionsProp: { type: Array as PropType<Array<string>>, default: () => [] } });
 const editing = ref(-1);
+// TODO: Why does this not turn into an array???
+const textarea = ref();
 const drag = ref(false);
 const disabled = ref(false);
 const instructions: Ref<string[]> = ref(props.instructionsProp);
 
 function addInstruction() {
 	instructions.value.push("");
+	editing.value = instructions.value.length - 1;
+	nextTick(() => {
+		(textarea.value as HTMLTextAreaElement).focus();
+	});
 }
 
 function removeInstruction(index: number) {

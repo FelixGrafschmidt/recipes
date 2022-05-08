@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 	buildModules: ["@unocss/nuxt", "floating-vue/nuxt"],
 	modules: ["@nuxtjs/color-mode"],
 	target: "static",
+	// ssr: false,
 	unocss: {
 		presets: [
 			presetWind(),
@@ -22,6 +23,8 @@ export default defineNuxtConfig({
 		]
 	},
 	vite: {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore
 		plugins: [
 			eslintPlugin()
 		]
