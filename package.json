@@ -19,7 +19,7 @@
 		"vite-plugin-eslint": "1.6.0"
 	},
 	"dependencies": {
-		"@nuxtjs/color-mode": "3.0.2",
+		"@nuxtjs/color-mode": "3.0.3",
 		"@unocss/nuxt": "0.33.2",
 		"@unocss/reset": "0.33.2",
 		"file-saver": "2.0.5",
