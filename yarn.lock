@@ -725,7 +725,7 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@types/eslint@8.4.2":
+"@types/eslint@8.4.2", "@types/eslint@^8.4.2":
   version "8.4.2"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.4.2.tgz#48f2ac58ab9c631cb68845c3d956b28f79fad575"
   integrity sha512-Z1nseZON+GEnFjJc04sv4NSALGjhFwy6K0HXt7qsn5ArfAKtb63dXNJHf+1YW6IpOIYRBGUbu3GwJdj8DGnCjA==
@@ -6164,12 +6164,13 @@ vite-plugin-checker@^0.4.6:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
 
-vite-plugin-eslint@1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-eslint/-/vite-plugin-eslint-1.6.0.tgz#6fc7e258c81893ecbc21e82d192e33c146be7c30"
-  integrity sha512-knoNx2jksnqSO645OGgA++xQigTfA+CgvoeJV6554y5DOc+mXbwUm4oR6ijycsD5IrPMDEnwj3NqnFTgjAAJCQ==
+vite-plugin-eslint@1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-eslint/-/vite-plugin-eslint-1.6.1.tgz#f5e0b2f5e755f2821560bf24ea636905693ee96d"
+  integrity sha512-wXwGJ222zjlllHmmPXX6oSU8DbmYjnA6HHBYbOLT8WAc73j4/YAtBQHCVSoHOTPiT4TPzsuZSvputWwc86BweQ==
   dependencies:
     "@rollup/pluginutils" "^4.2.1"
+    "@types/eslint" "^8.4.2"
     rollup "^2.70.2"
 
 vite@^2.9.8:
