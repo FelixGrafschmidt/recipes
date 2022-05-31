@@ -466,30 +466,6 @@
     unimport "^0.1.9"
     untyped "^0.4.4"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@latest":
-  version "3.0.0-rc.1-27510703.46ecbc5"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.0-rc.1-27510703.46ecbc5.tgz#450a17feae7d69798de1e825eb419da3f8f760c3"
-  integrity sha512-cDExp5b1lKgYCPo3J+3j3ubJFq7+9c7XtGaDYIZDel+DBacGaA/o8yzRHrPEan9oSDuNnkc0xqSuWz5inLMH7g==
-  dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.0-rc.1-27510703.46ecbc5"
-    c12 "^0.2.7"
-    consola "^2.15.3"
-    defu "^6.0.0"
-    globby "^13.1.1"
-    hash-sum "^2.0.0"
-    ignore "^5.2.0"
-    jiti "^1.13.0"
-    knitwork "^0.1.1"
-    lodash.template "^4.5.0"
-    mlly "^0.5.2"
-    pathe "^0.2.0"
-    pkg-types "^0.3.2"
-    scule "^0.2.1"
-    semver "^7.3.7"
-    unctx "^1.1.4"
-    unimport "^0.1.6"
-    untyped "^0.4.4"
-
 "@nuxt/schema@^3.0.0-rc.1":
   version "3.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.0.0-rc.1.tgz#ea8d3de35386cb287af6b54ba0075abee5d2ae61"
@@ -521,22 +497,6 @@
     std-env "^3.1.1"
     ufo "^0.8.4"
     unimport "^0.1.9"
-
-"@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-rc.1-27510703.46ecbc5":
-  version "3.0.0-rc.1-27510703.46ecbc5"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.0-rc.1-27510703.46ecbc5.tgz#0250f8b98a116a1a9104d6ab18784b907d339976"
-  integrity sha512-l32IHHYH8qPqwOZlqu2yWk1p2B+M5iRHrqhH2/vK1ZC3KhBSn9dwcfTsBiSo3AmJ/ello2Tx8qCftygdF7HJ3w==
-  dependencies:
-    c12 "^0.2.7"
-    create-require "^1.1.1"
-    defu "^6.0.0"
-    jiti "^1.13.0"
-    pathe "^0.2.0"
-    postcss-import-resolver "^2.0.0"
-    scule "^0.2.1"
-    std-env "^3.1.1"
-    ufo "^0.8.3"
-    unimport "^0.1.6"
 
 "@nuxt/telemetry@^2.1.3":
   version "2.1.3"
@@ -603,15 +563,14 @@
     vite-node "^0.12.1"
     vite-plugin-checker "^0.4.6"
 
-"@nuxtjs/color-mode@3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/color-mode/-/color-mode-3.0.3.tgz#f5b332f4383f169759ccb31e60fad1537d67adc8"
-  integrity sha512-FQVyLgRQ4C4C5NmTBrFRNm+LNjgT4cPFqyqfoRxD6hfVZhLxWJfKPGUaT8H/BCeBzkZZ29583MG9GqyDX7rnNg==
+"@nuxtjs/color-mode@3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/color-mode/-/color-mode-3.1.2.tgz#d301629166c2352fabe4f675a79cd998346f05f9"
+  integrity sha512-U5b2eQ+dB9ztAPdKAAmzIMn1FhHnK2iYMJ7cclt3md80BiqDVFvqVuyQQBTz0DC7uyg5PYmiC1vXQkEFv6ACpw==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@latest"
-    defu "^5.0.0"
+    "@nuxt/kit" "^3.0.0-rc.3"
     lodash.template "^4.5.0"
-    pathe "^0.2.0"
+    pathe "^0.3.0"
 
 "@nuxtjs/eslint-config-typescript@10.0.0":
   version "10.0.0"
@@ -2230,11 +2189,6 @@ define-properties@^1.1.3:
   dependencies:
     has-property-descriptors "^1.0.0"
     object-keys "^1.1.1"
-
-defu@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/defu/-/defu-5.0.1.tgz#a034278f9b032bf0845d261aa75e9ad98da878ac"
-  integrity sha512-EPS1carKg+dkEVy3qNTqIdp2qV7mUP08nIsupfwQpz++slCVRw7qbQyWvSTig+kFPwz2XXp5/kIIkH+CwrJKkQ==
 
 defu@^6.0.0:
   version "6.0.0"
