@@ -26,6 +26,6 @@
 		"floating-vue": "2.0.0-beta.16",
 		"nuxt": "3.0.0-rc.3",
 		"unocss": "0.35.4",
-		"vuedraggable": "^4.1.0"
+		"vuedraggable": "4.1.0"
 	}
 }
