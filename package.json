@@ -23,7 +23,7 @@
 		"@unocss/nuxt": "0.37.1",
 		"@unocss/reset": "0.33.2",
 		"file-saver": "2.0.5",
-		"floating-vue": "2.0.0-beta.16",
+		"floating-vue": "2.0.0-beta.17",
 		"nuxt": "3.0.0-rc.3",
 		"unocss": "0.35.4",
 		"vuedraggable": "4.1.0"
