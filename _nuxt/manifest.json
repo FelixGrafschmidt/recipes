@@ -1,17 +1,17 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-25c16161.mjs",
+    "file": "entry-562c9f6a.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
       "pages/index.vue"
     ],
     "css": [
-      "entry.268ed116.css"
+      "entry.d71bfe8a.css"
     ]
   },
   "pages/index.vue": {
-    "file": "index-a1e703c8.mjs",
+    "file": "index-1e0c3b0d.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
