@@ -1,42 +1,30 @@
 module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-		node: true
-	},
-	extends: [
-		"eslint:recommended",
-		"plugin:vue/essential",
-		"plugin:@typescript-eslint/recommended",
-		"@nuxtjs/eslint-config-typescript"
-	],
+	root: true,
+	parser: "vue-eslint-parser",
 	parserOptions: {
 		ecmaVersion: "latest",
 		parser: "@typescript-eslint/parser",
-		sourceType: "module"
+		sourceType: "module",
 	},
-	plugins: [
-		"vue",
-		"@typescript-eslint"
+	extends: [
+		// "@nuxtjs/eslint-config-typescript",
+		// "plugin:nuxt/recommended",
+		// "plugin:prettier/recommended",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"@nuxtjs/eslint-config-typescript",
+		"plugin:vue/vue3-recommended",
+		"plugin:prettier/recommended",
+		"plugin:vue/base",
+		"plugin:nuxt/recommended",
 	],
+	plugins: ["prettier", "@typescript-eslint"],
+	// add your custom rules here
 	rules: {
-		indent: ["error", "tab"],
-		"vue/html-indent": ["error", "tab"],
-		"vue/no-multiple-template-root": "off",
-		"vue/script-indent": ["error", "tab"],
-		"no-tabs": "off",
-		"no-array-constructor": "off",
-		"max-len": ["error", 240],
-		quotes: ["error", "double"],
-		semi: ["error", "always"],
-		"space-before-function-paren": ["error", "never"]
+		"no-console": "off",
+		"no-debugger": "off",
+		"vue/multi-word-component-names": "off",
+		"no-case-declarations": "off",
 	},
-	overrides: [
-		{
-			files: ["*.vue"],
-			rules: {
-				indent: "off"
-			}
-		}
-	]
+	ignorePatterns: [".nuxt/"],
 };

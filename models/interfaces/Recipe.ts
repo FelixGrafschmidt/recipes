@@ -1,26 +1,29 @@
+import { nanoid } from "nanoid";
 
 export interface Ingredient {
-	name: string,
-	amount: string,
-	notes: string
+	name: string;
+	amount: string;
+	notes: string;
 }
 
 export interface Recipe {
-	name: string,
-	image: string,
-	ingredients: Ingredient[],
-	tags: string[],
-	instructions: string[],
+	name: string;
+	id: string;
+	image: string;
+	ingredients: Ingredient[];
+	tags: string[];
+	instructions: string[];
 }
 
 export interface Data {
-	recipes: Recipe[],
-	tags: string[],
-	ingredients: Ingredient[],
+	id: string;
+	recipes: Recipe[];
+	tags: string[];
+	ingredients: Ingredient[];
 }
 
 export function newRecipe(): Recipe {
-	return { name: "", image: "", ingredients: new Array<Ingredient>(), tags: [], instructions: [] };
+	return { name: "", image: "", id: nanoid(), ingredients: [], tags: [], instructions: [] };
 }
 export function newIngredient(): Ingredient {
 	return { name: "", amount: "", notes: "" };
