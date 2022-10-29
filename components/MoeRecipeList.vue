@@ -1,9 +1,9 @@
 <template>
-	<section v-if="store.data.recipes.length" bg-gray-6 class="flex flex-col py-4" gap-4>
+	<section v-if="store.data.recipes.length" bg-gray-7 class="flex flex-col py-4" gap-4>
 		<div
 			v-for="(recipe, i) in store.data.recipes"
 			:key="i"
-			class="cursor-pointer hover:bg-gray-700 text-xl"
+			class="cursor-pointer hover:bg-gray-8 text-xl"
 			py-2
 			px-4
 			h-min

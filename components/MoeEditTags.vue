@@ -4,7 +4,7 @@
 			<label class="flex flex-col">
 				<span>Neuer Tag</span>
 				<div class="flex flex-row">
-					<input v-model="newtag" class="bg-gray-500 rounded rounded-r-none" type="text" />
+					<input v-model="newtag" class="bg-gray-500 rounded rounded-r-none px-2" type="text" />
 					<button
 						:class="{ grayscale: !newtag }"
 						:disabled="!newtag"

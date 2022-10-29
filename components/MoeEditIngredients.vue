@@ -16,13 +16,13 @@
 				class="even:hover:bg-gray-600 even:bg-gray-700 hover:bg-gray-600"
 			>
 				<div w="30%" text-center>
-					<input ref="name" v-model="ingredient.name" class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+					<input ref="name" v-model="ingredient.name" px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
 				</div>
 				<div w="30%" text-center>
-					<input v-model="ingredient.amount" class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+					<input v-model="ingredient.amount" px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
 				</div>
 				<div w="30%" text-center>
-					<input v-model="ingredient.notes" class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+					<input v-model="ingredient.notes" px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
 				</div>
 				<div w="10%" class="px-2 text-teal-400">
 					<button @click="recipe.ingredients.splice(i, 1)">Entfernen</button>

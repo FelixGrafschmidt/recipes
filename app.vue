@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
 	<MoeHeader h-10vh />
-	<main flex="~ row" h-90vh bg-gray-5>
+	<main flex="~ row" h-90vh bg-gray-6>
 		<MoeRecipeList w="25%" />
 		<NuxtPage w="75%" />
 	</main>
@@ -26,5 +26,9 @@
 
 	:root {
 		font-family: "Lato", sans-serif;
+	}
+
+	body {
+		overflow-y: hidden;
 	}
 </style>

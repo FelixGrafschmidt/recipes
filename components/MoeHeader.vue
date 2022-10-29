@@ -1,8 +1,8 @@
 <template>
-	<header class="items-center p-4 bg-gray-700 text-gray-200 flex flex-row gap-4">
+	<header class="items-center p-4 bg-gray-8 text-gray-3 flex flex-row gap-4">
 		<h1 class="text-3xl">Rezepte</h1>
-		<button class="rounded-md bg-gray-400 px-2 h-8 text-gray-600 hover:bg-gray-300" @click="save">Alles speichern</button>
-		<button class="rounded-md bg-gray-400 px-2 h-8 text-gray-600 hover:bg-gray-300" @click="createNewRecipe">Neues Rezept</button>
+		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="save">Alles speichern</button>
+		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="createNewRecipe">Neues Rezept</button>
 	</header>
 </template>
 
