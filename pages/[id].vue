@@ -74,7 +74,7 @@
 					<Icon name="fa:close" />
 				</button>
 			</header>
-			<main>
+			<main overflow-y-auto>
 				<component :is="editComponent" />
 			</main>
 		</section>

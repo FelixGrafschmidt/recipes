@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section px-2>
 		<draggable
 			:list="recipe.instructions"
 			item-key="id"
@@ -17,11 +17,10 @@
 						class="bg-gray-7 rounded rounded-r-none p-1"
 						px-2
 						h-20
-						overflow-y-auto
 						w-full
 						type="text"
 					/>
-					<p v-else class="bg-gray-7 h-20 rounded rounded-r-none p-1" px-2 overflow-y-auto w-full cursor-default>
+					<p v-else class="bg-gray-7 h-20 rounded rounded-r-none p-1" px-2 w-full cursor-default>
 						{{ item.element }}
 					</p>
 					<div class="flex flex-col gap-1">
