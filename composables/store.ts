@@ -1,9 +1,11 @@
 import { Ref } from "nuxt/dist/app/compat/capi";
 import { defineStore } from "pinia";
-import { Data, newRecipe } from "~~/models/interfaces/Recipe";
+import { Data, newRecipe, Recipe } from "~~/models/interfaces/Recipe";
 
 export const useStore = defineStore("store", () => {
 	const data: Ref<Data> = ref(null);
+	const currentRecipe: Ref<Recipe> = ref(null);
+
 	async function save() {
 		try {
 			await $fetch("/api/recipes?id=" + data.value.id, { body: data.value, method: "POST" });
@@ -25,5 +27,14 @@ export const useStore = defineStore("store", () => {
 		useRouter().push({ path: "/" + recipe.id, query: useRoute().query });
 	}
 
-	return { data, save, load, create };
+	function deleteRecipe(id: string) {
+		data.value.recipes = data.value.recipes.filter((recipe) => recipe.id !== id);
+	}
+
+	function selectRecipe(id: string) {
+		currentRecipe.value = data.value.recipes.find((recipe) => recipe.id === id);
+		useRouter().push({ path: "/" + id, query: useRoute().query });
+	}
+
+	return { data, currentRecipe, save, load, create, deleteRecipe, selectRecipe };
 });
