@@ -2,7 +2,24 @@
 <template>
 	<MoeHeader h-10vh />
 	<client-only>
-		<main v-if="store.data?.id" flex="~ row" h-90vh bg-gray-6>
+		<main v-if="!largeScreen" relative>
+			<section flex="~ row" items-start absolute top-0 z-10>
+				<MoeRecipeList v-if="listOpen" max-w-20rem min-h-screen /><button>
+					<Icon
+						:name="listOpen ? 'fa:chevron-left' : 'fa:chevron-right'"
+						bg-gray-5
+						h-8
+						w-8
+						text-gray-3
+						p-2
+						rounded-br-md
+						@click="listOpen = !listOpen"
+					/>
+				</button>
+			</section>
+			<NuxtPage />
+		</main>
+		<main v-else-if="store.data?.id" flex="~ row" h-90vh bg-gray-6>
 			<MoeRecipeList w="25%" />
 			<NuxtPage w="75%" />
 		</main>
@@ -13,6 +30,9 @@
 	import { nanoid } from "nanoid";
 
 	const store = useStore();
+	const largeScreen = useMediaQuery("(min-width: 640px)");
+
+	const listOpen = ref(false);
 
 	if (process.client) {
 		const queryId = useRoute().query.id?.toString();
@@ -42,6 +62,6 @@
 	}
 
 	body {
-		@apply bg-gray-6 overflow-y-hidden;
+		@apply bg-gray-6 sm:overflow-y-hidden;
 	}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<section v-if="store.data.recipes.length" bg-gray-7 class="flex flex-col py-4" gap-4>
+	<section v-if="store.data.recipes.length" bg-gray-7 class="flex flex-col py-4" gap-4 shadow>
 		<div
 			v-for="(recipe, i) in store.data.recipes"
 			:key="i"
@@ -15,10 +15,11 @@
 			flex="~ row"
 			items-center
 			justify-between
+			gap-2
 			@click="selectRecipe(recipe.id)"
 		>
 			{{ recipe.name || recipe.id }}
-			<button bg-gray-5 p-1 rounded-md hover:bg-red-9 flex="~ row" items-center @click.stop="deleteRecipe(recipe)">
+			<button hidden bg-gray-5 p-1 rounded-md hover:bg-red-9 sm:flex="~ row" items-center @click.stop="deleteRecipe(recipe)">
 				<Icon name="fa:trash-o" />
 			</button>
 		</div>

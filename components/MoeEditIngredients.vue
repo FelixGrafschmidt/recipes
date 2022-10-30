@@ -15,17 +15,29 @@
 				justify-around
 				class="even:hover:bg-gray-600 even:bg-gray-700 hover:bg-gray-600"
 			>
-				<div w="30%" text-center>
-					<input ref="name" v-model="ingredient.name" px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+				<div w="30%" text-center mx-1>
+					<input
+						ref="name"
+						v-model="ingredient.name"
+						w-full
+						px-2
+						class="bg-gray-5 rounded"
+						type="text"
+						@keydown="handleKeyDown"
+					/>
 				</div>
-				<div w="30%" text-center>
-					<input v-model="ingredient.amount" px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+				<div w="30%" text-center mx-1>
+					<input v-model="ingredient.amount" w-full px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
 				</div>
-				<div w="30%" text-center>
-					<input v-model="ingredient.notes" px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+				<div w="30%" text-center mx-1>
+					<input v-model="ingredient.notes" w-full px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
 				</div>
-				<div w="10%" class="px-2 text-teal-400">
-					<button @click="recipe.ingredients.splice(i, 1)">Entfernen</button>
+				<div w="10%" class="px-2 text-teal-400" mx-1>
+					<button @click="recipe.ingredients.splice(i, 1)">
+						<button p-1 rounded-md hover:bg-red-9 flex="~ row" items-center>
+							<Icon name="fa:trash-o" />
+						</button>
+					</button>
 				</div>
 			</div>
 		</div>

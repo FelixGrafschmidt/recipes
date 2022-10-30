@@ -2,21 +2,21 @@
 	<div
 		v-if="currentRecipe"
 		ref="content"
-		class="w-3/4 flex flex-col gap-4 p-4 relative"
+		class="sm:w-3/4 flex flex-col gap-4 p-4 relative"
 		:scrollbar="!editing ? '~ rounded w-2 radius-2 track-radius-4 thumb-radius-4 track-color-gray-5 thumb-color-gray-8' : ''"
-		:class="{ 'overflow-y-auto': !editing }"
+		:class="{ 'sm:overflow-y-auto': !editing }"
 	>
-		<input v-model="currentRecipe.name" class="w-96 px-2 text-2xl bg-gray-5 text-gray-3 rounded" />
+		<input v-model="currentRecipe.name" class="sm:w-96 px-2 text-2xl bg-gray-5 text-gray-3 rounded" mt-8 sm:mt-0 />
 		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Tags
-			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.TAGS)">bearbeiten</button>
+			<button hidden sm:block class="ml-2 text-sm text-teal-200" @click="edit(EditType.TAGS)">bearbeiten</button>
 		</h3>
 		<div v-if="currentRecipe.tags.length" class="flex flex-row flex-wrap gap-2">
 			<MoeTag v-for="(tag, i) in currentRecipe.tags" :key="i" :tag="tag" />
 		</div>
-		<h3 class="text-xl text-gray-3">
+		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Zutaten
-			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.INGREDIENTS)">bearbeiten</button>
+			<button hidden sm:block class="ml-2 text-sm text-teal-200" @click="edit(EditType.INGREDIENTS)">bearbeiten</button>
 		</h3>
 		<div v-if="currentRecipe.ingredients.length" flex flex-col text-gray-3>
 			<div flex="~ row" justify-around text-center bg-gray-7 h-8 rounded-t-md items-center border-1 py-6 font-bold>
@@ -51,9 +51,9 @@
 				</div>
 			</div>
 		</div>
-		<h3 class="text-xl text-gray-3">
+		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Zubereitung
-			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.INSTRUCTIONS)">bearbeiten</button>
+			<button hidden sm:block class="ml-2 text-sm text-teal-200" @click="edit(EditType.INSTRUCTIONS)">bearbeiten</button>
 		</h3>
 		<div class="flex flex-row flex-wrap gap-2" text-gray-3 text-lg>
 			<ol class="list-decimal pl-4">

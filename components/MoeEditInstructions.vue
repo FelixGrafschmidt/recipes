@@ -20,7 +20,7 @@
 						w-full
 						type="text"
 					/>
-					<p v-else class="bg-gray-7 h-20 rounded rounded-r-none p-1" px-2 w-full cursor-default>
+					<p v-else class="bg-gray-7 h-20 rounded rounded-r-none p-1" px-2 w-full cursor-default overflow-y-auto>
 						{{ item.element }}
 					</p>
 					<div class="flex flex-col gap-1">
