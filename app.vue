@@ -36,21 +36,26 @@
 	const listOpen = ref(false);
 
 	if (process.client) {
-		const queryId = useRoute().query.id?.toString();
-		if (!queryId) {
-			const lsId = window.localStorage.getItem("id");
-			if (lsId) {
-				await store.load(lsId);
-			} else {
-				const newId = nanoid();
-				store.data = { id: newId, ingredients: [], recipes: [], tags: [] };
-				window.localStorage.setItem("id", newId);
-			}
+		const shareId = useRoute().query.share?.toString();
+		if (shareId) {
+			await store.load(shareId);
 		} else {
-			window.localStorage.setItem("id", queryId);
-			await store.load(queryId);
+			const queryId = useRoute().query.id?.toString();
+			if (!queryId) {
+				const lsId = window.localStorage.getItem("id");
+				if (lsId) {
+					await store.load(lsId);
+				} else {
+					const newId = nanoid();
+					store.data = { id: newId, ingredients: [], recipes: [], tags: [] };
+					window.localStorage.setItem("id", newId);
+				}
+			} else {
+				window.localStorage.setItem("id", queryId);
+				await store.load(queryId);
+			}
+			useRouter().push({ query: null });
 		}
-		useRouter().push({ query: null });
 	}
 </script>
 

@@ -38,7 +38,7 @@
 
 	function share() {
 		const url = new URL(window.location.href);
-		url.searchParams.set("id", store.data.id);
+		url.searchParams.set("share", store.data.id);
 		const data: ShareData = { url: url.toString(), title: "Meine Rezepte", text: "" };
 		navigator.share(data);
 	}
