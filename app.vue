@@ -4,7 +4,8 @@
 	<client-only>
 		<main v-if="!largeScreen" relative>
 			<section flex="~ row" items-start absolute top-0 z-10>
-				<MoeRecipeList v-if="listOpen" max-w-20rem min-h-screen /><button>
+				<MoeRecipeList v-if="listOpen" max-w-16rem min-h-90vh @close="listOpen = false" />
+				<button>
 					<Icon
 						:name="listOpen ? 'fa:chevron-left' : 'fa:chevron-right'"
 						bg-gray-5
@@ -17,7 +18,7 @@
 					/>
 				</button>
 			</section>
-			<NuxtPage />
+			<NuxtPage min-h-90vh />
 		</main>
 		<main v-else-if="store.data?.id" flex="~ row" h-90vh bg-gray-6>
 			<MoeRecipeList w="25%" />

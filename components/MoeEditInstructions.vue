@@ -52,7 +52,7 @@
 						</button>
 					</div>
 					<div class="flex flex-row items-center justify-center ml-4 cursor-pointer">
-						<MoeIcon name="move" class="dragger" />
+						<Icon name="fa-solid:grip-lines" class="dragger" />
 					</div>
 				</section>
 			</template>

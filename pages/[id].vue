@@ -4,19 +4,19 @@
 		ref="content"
 		class="sm:w-3/4 flex flex-col gap-4 p-4 relative"
 		:scrollbar="!editing ? '~ rounded w-2 radius-2 track-radius-4 thumb-radius-4 track-color-gray-5 thumb-color-gray-8' : ''"
-		:class="{ 'sm:overflow-y-auto': !editing }"
+		:class="{ 'overflow-y-auto': !editing }"
 	>
 		<input v-model="currentRecipe.name" class="sm:w-96 px-2 text-2xl bg-gray-5 text-gray-3 rounded" mt-8 sm:mt-0 />
 		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Tags
-			<button hidden sm:block class="ml-2 text-sm text-teal-200" @click="edit(EditType.TAGS)">bearbeiten</button>
+			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.TAGS)">bearbeiten</button>
 		</h3>
 		<div v-if="currentRecipe.tags.length" class="flex flex-row flex-wrap gap-2">
 			<MoeTag v-for="(tag, i) in currentRecipe.tags" :key="i" :tag="tag" />
 		</div>
 		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Zutaten
-			<button hidden sm:block class="ml-2 text-sm text-teal-200" @click="edit(EditType.INGREDIENTS)">bearbeiten</button>
+			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.INGREDIENTS)">bearbeiten</button>
 		</h3>
 		<div v-if="currentRecipe.ingredients.length" flex flex-col text-gray-3>
 			<div flex="~ row" justify-around text-center bg-gray-7 h-8 rounded-t-md items-center border-1 py-6 font-bold>
@@ -53,7 +53,7 @@
 		</div>
 		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Zubereitung
-			<button hidden sm:block class="ml-2 text-sm text-teal-200" @click="edit(EditType.INSTRUCTIONS)">bearbeiten</button>
+			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.INSTRUCTIONS)">bearbeiten</button>
 		</h3>
 		<div class="flex flex-row flex-wrap gap-2" text-gray-3 text-lg>
 			<ol class="list-decimal pl-4">
@@ -64,6 +64,7 @@
 		</div>
 		<section
 			v-if="editing"
+			max-h-80vh
 			p-4
 			absolute
 			top-16
@@ -118,13 +119,16 @@
 	const currentRecipe = store.currentRecipe;
 
 	function edit(type: EditType) {
+		window.scrollTo({ top: 0 });
 		content.value.scrollTo({ top: 0 });
+		document.body.classList.add("overflow-y-hidden");
 		editing.value = true;
 		editType.value = type;
 	}
 
 	function stopEditing() {
 		editing.value = false;
+		document.body.classList.remove("overflow-y-hidden");
 		currentRecipe.tags = currentRecipe.tags.filter((tag) => tag);
 		currentRecipe.ingredients = currentRecipe.ingredients.filter((ingredient) => ingredient.name);
 		currentRecipe.instructions = currentRecipe.instructions.filter((instruction) => instruction);
