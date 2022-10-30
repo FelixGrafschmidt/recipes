@@ -6,7 +6,7 @@
 		:scrollbar="!editing ? '~ rounded w-2 radius-2 track-radius-4 thumb-radius-4 track-color-gray-5 thumb-color-gray-8' : ''"
 		:class="{ 'overflow-y-auto': !editing }"
 	>
-		<input v-model="currentRecipe.name" class="sm:w-96 px-2 text-2xl bg-gray-5 text-gray-3 rounded" mt-8 sm:mt-0 />
+		<input v-model="currentRecipe.name" class="sm:w-96 px-2 text-2xl bg-gray-5 text-gray-3 rounded" mt-8 sm:mt-0 focus:outline-none />
 		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Tags
 			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.TAGS)">bearbeiten</button>

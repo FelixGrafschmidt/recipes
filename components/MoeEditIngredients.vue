@@ -19,6 +19,7 @@
 					<input
 						ref="name"
 						v-model="ingredient.name"
+						focus:outline-none
 						w-full
 						px-2
 						class="bg-gray-5 rounded"
@@ -27,10 +28,26 @@
 					/>
 				</div>
 				<div w="30%" text-center mx-1>
-					<input v-model="ingredient.amount" w-full px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+					<input
+						v-model="ingredient.amount"
+						focus:outline-none
+						w-full
+						px-2
+						class="bg-gray-5 rounded"
+						type="text"
+						@keydown="handleKeyDown"
+					/>
 				</div>
 				<div w="30%" text-center mx-1>
-					<input v-model="ingredient.notes" w-full px-2 class="bg-gray-5 rounded" type="text" @keydown="handleKeyDown" />
+					<input
+						v-model="ingredient.notes"
+						focus:outline-none
+						w-full
+						px-2
+						class="bg-gray-5 rounded"
+						type="text"
+						@keydown="handleKeyDown"
+					/>
 				</div>
 				<div w="10%" class="px-2 text-teal-400" mx-1>
 					<button @click="recipe.ingredients.splice(i, 1)">

@@ -4,7 +4,13 @@
 			<label class="flex flex-col">
 				<span>Neuer Tag</span>
 				<div class="flex flex-row">
-					<input v-model="newtag" class="bg-gray-500 rounded rounded-r-none px-2" type="text" @keydown="keyhandler" />
+					<input
+						v-model="newtag"
+						class="bg-gray-500 rounded rounded-r-none px-2"
+						focus:outline-none
+						type="text"
+						@keydown="keyhandler"
+					/>
 					<button
 						:class="{ grayscale: !newtag }"
 						:disabled="!newtag"
@@ -46,7 +52,7 @@
 	}
 
 	function keyhandler(event: KeyboardEvent) {
-		if (event.code === "Enter") {
+		if (event.key === "Enter") {
 			addTag();
 		}
 	}
