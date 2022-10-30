@@ -5,7 +5,7 @@
 		<main v-if="!largeScreen" relative>
 			<section flex="~ row" items-start absolute top-0 z-10>
 				<MoeRecipeList v-if="listOpen" max-w-16rem min-h-90vh @close="listOpen = false" />
-				<button>
+				<button v-if="store.data.recipes.length">
 					<Icon
 						:name="listOpen ? 'fa:chevron-left' : 'fa:chevron-right'"
 						bg-gray-5
