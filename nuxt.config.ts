@@ -5,7 +5,6 @@ import transformerDirectives from "@unocss/transformer-directives";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-	buildModules: ["floating-vue/nuxt"],
 	modules: ["@pinia/nuxt", "@unocss/nuxt", "nuxt-icon", "@vueuse/nuxt"],
 	unocss: {
 		// presets
