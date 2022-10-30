@@ -24,4 +24,7 @@ export default defineNuxtConfig({
 		],
 	},
 	vite: {},
+	experimental: {
+		writeEarlyHints: false,
+	},
 });
