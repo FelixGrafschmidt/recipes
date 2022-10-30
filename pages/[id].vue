@@ -1,6 +1,12 @@
 <template>
-	<div v-if="currentRecipe" ref="content" class="w-3/4 flex flex-col gap-4 p-4 relative" :class="{ 'overflow-y-auto': !editing }">
-		<input v-model="currentRecipe.name" class="w-96 px-2 text-2xl bg-gray-5 rounded" />
+	<div
+		v-if="currentRecipe"
+		ref="content"
+		class="w-3/4 flex flex-col gap-4 p-4 relative"
+		:scrollbar="!editing ? '~ rounded w-2 radius-2 track-radius-4 thumb-radius-4 track-color-gray-5 thumb-color-gray-8' : ''"
+		:class="{ 'overflow-y-auto': !editing }"
+	>
+		<input v-model="currentRecipe.name" class="w-96 px-2 text-2xl bg-gray-5 text-gray-3 rounded" />
 		<h3 class="text-xl flex flex-row items-center text-gray-3">
 			Tags
 			<button class="ml-2 text-sm text-teal-200" @click="edit(EditType.TAGS)">bearbeiten</button>
@@ -74,7 +80,7 @@
 					<Icon name="fa:close" />
 				</button>
 			</header>
-			<main overflow-y-auto>
+			<main overflow-y-auto scrollbar="~ rounded w-2 radius-2 track-radius-4 thumb-radius-4 track-color-gray-5 thumb-color-gray-7">
 				<component :is="editComponent" />
 			</main>
 		</section>

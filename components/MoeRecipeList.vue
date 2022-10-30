@@ -4,6 +4,9 @@
 			v-for="(recipe, i) in store.data.recipes"
 			:key="i"
 			class="cursor-pointer hover:bg-gray-8 text-xl"
+			:border-y="recipe.id === store.currentRecipe?.id ? 'teal-7' : ''"
+			border-y-gray-7
+			border-y-2
 			py-2
 			px-4
 			h-min
@@ -34,7 +37,8 @@
 	function deleteRecipe(recipe: Recipe) {
 		if (window.confirm(`${recipe.name} löschen?`)) {
 			store.deleteRecipe(recipe.id);
-			useRouter().push({ path: "/", query: useRoute().query });
+			store.currentRecipe = null;
+			useRouter().push({ path: "/" });
 		}
 	}
 </script>

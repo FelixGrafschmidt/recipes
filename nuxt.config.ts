@@ -1,6 +1,7 @@
 import { presetAttributify, presetWind } from "unocss";
 import { presetScrollbar } from "unocss-preset-scrollbar";
 import { defineNuxtConfig } from "nuxt/config";
+import transformerDirectives from "@unocss/transformer-directives";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -22,6 +23,7 @@ export default defineNuxtConfig({
 				// config
 			}),
 		],
+		transformers: [transformerDirectives()],
 	},
 	vite: {},
 	experimental: {

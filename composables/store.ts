@@ -24,7 +24,7 @@ export const useStore = defineStore("store", () => {
 	function create() {
 		const recipe = newRecipe();
 		data.value.recipes.push(recipe);
-		useRouter().push({ path: "/" + recipe.id, query: useRoute().query });
+		useRouter().push({ path: "/" + recipe.id });
 	}
 
 	function deleteRecipe(id: string) {
@@ -33,7 +33,7 @@ export const useStore = defineStore("store", () => {
 
 	function selectRecipe(id: string) {
 		currentRecipe.value = data.value.recipes.find((recipe) => recipe.id === id);
-		useRouter().push({ path: "/" + id, query: useRoute().query });
+		useRouter().push({ path: "/" + id });
 	}
 
 	return { data, currentRecipe, save, load, create, deleteRecipe, selectRecipe };
