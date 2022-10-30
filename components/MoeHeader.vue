@@ -1,6 +1,8 @@
 <template>
-	<header class="items-center p-4 bg-gray-8 text-gray-3 flex flex-row gap-4">
-		<h1 cursor-pointer class="text-3xl" @click="toHome">Rezepte</h1>
+	<header class="items-center py-4 px-2 bg-gray-8 text-gray-3 flex flex-row gap-4">
+		<div cursor-pointer @click="toHome">
+			<MoeLogo text-teal-6 sm:h-16 sm:w-16 h-12 w-12 />
+		</div>
 		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="save">
 			<span hidden sm:block>Alles speichern</span>
 			<span block sm:hidden flex="~ row" items-center>
@@ -31,15 +33,18 @@
 		await store.save();
 	}
 
-	function toHome() {
-		store.currentRecipe = null;
-		useRouter().push("/");
-	}
-
 	function share() {
 		const url = new URL(window.location.href);
 		url.searchParams.set("share", store.data.id);
 		const data: ShareData = { url: url.toString(), title: "Meine Rezepte", text: "" };
 		navigator.share(data);
+	}
+
+	function toHome() {
+		const url = new URL(window.location.href);
+		url.pathname = "";
+		url.search = "";
+		url.host = url.host.split(".").slice(1).join(".");
+		window.location.href = url.toString();
 	}
 </script>
