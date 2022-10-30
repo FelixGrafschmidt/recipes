@@ -25,8 +25,6 @@
 </template>
 
 <script setup lang="ts">
-	import { TLSSocket } from "tls";
-
 	const store = useStore();
 	function createNewRecipe() {
 		store.create();
@@ -44,7 +42,7 @@
 
 	const home = computed(() => {
 		if (process.server) {
-			const protocol = useNuxtApp().ssrContext.event.req.socket instanceof TLSSocket ? "https" : "http";
+			const protocol = "http";
 			const hostname = useRequestHeaders().host;
 			return `${protocol}://${hostname}`;
 		} else {
