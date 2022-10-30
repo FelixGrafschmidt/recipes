@@ -1,8 +1,8 @@
 <template>
 	<header class="items-center py-4 px-2 bg-gray-8 text-gray-3 flex flex-row gap-4">
-		<div cursor-pointer @click="toHome">
+		<a :href="home" cursor-pointer>
 			<MoeLogo text-teal-6 sm:h-16 sm:w-16 h-12 w-12 />
-		</div>
+		</a>
 		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="save">
 			<span hidden sm:block>Alles speichern</span>
 			<span block sm:hidden flex="~ row" items-center>
@@ -25,6 +25,8 @@
 </template>
 
 <script setup lang="ts">
+	import { TLSSocket } from "tls";
+
 	const store = useStore();
 	function createNewRecipe() {
 		store.create();
@@ -40,11 +42,17 @@
 		navigator.share(data);
 	}
 
-	function toHome() {
-		const url = new URL(window.location.href);
-		url.pathname = "";
-		url.search = "";
-		url.host = url.host.split(".").slice(1).join(".");
-		window.location.href = url.toString();
-	}
+	const home = computed(() => {
+		if (process.server) {
+			const protocol = useNuxtApp().ssrContext.event.req.socket instanceof TLSSocket ? "https" : "http";
+			const hostname = useRequestHeaders().host;
+			return `${protocol}://${hostname}`;
+		} else {
+			const url = new URL(window.location.href);
+			url.pathname = "";
+			url.search = "";
+			url.host = url.host.split(".").slice(1).join(".");
+			return url.toString();
+		}
+	});
 </script>
