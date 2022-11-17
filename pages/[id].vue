@@ -127,6 +127,9 @@
 	}
 
 	function stopEditing() {
+		if (!currentRecipe) {
+			return;
+		}
 		editing.value = false;
 		document.body.classList.remove("overflow-y-hidden");
 		currentRecipe.tags = currentRecipe.tags.filter((tag) => tag);

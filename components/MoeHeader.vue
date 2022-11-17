@@ -1,8 +1,8 @@
 <template>
 	<header class="items-center py-4 px-2 bg-gray-8 text-gray-3 flex flex-row gap-4">
-		<a :href="home" cursor-pointer>
+		<nuxt-link :href="home" cursor-pointer>
 			<MoeLogo text-teal-6 sm:h-16 sm:w-16 h-12 w-12 />
-		</a>
+		</nuxt-link>
 		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="save">
 			<span hidden sm:block>Alles speichern</span>
 			<span block sm:hidden flex="~ row" items-center>
@@ -34,6 +34,9 @@
 	}
 
 	function share() {
+		if (!store.data) {
+			return;
+		}
 		const url = new URL(window.location.href);
 		url.searchParams.set("share", store.data.id);
 		const data: ShareData = { url: url.toString(), title: "Meine Rezepte", text: "" };

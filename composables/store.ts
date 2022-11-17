@@ -3,12 +3,12 @@ import { defineStore } from "pinia";
 import { Data, newRecipe, Recipe } from "~~/models/interfaces/Recipe";
 
 export const useStore = defineStore("store", () => {
-	const data: Ref<Data> = ref(null);
-	const currentRecipe: Ref<Recipe> = ref(null);
+	const data: Ref<Data | null> = ref(null);
+	const currentRecipe: Ref<Recipe | null> = ref(null);
 
 	async function save() {
 		try {
-			await $fetch("/api/recipes?id=" + data.value.id, { body: data.value, method: "POST" });
+			await $fetch("/api/recipes?id=" + data.value?.id, { body: data.value, method: "POST" });
 		} catch (error) {
 			console.error(error);
 		}
@@ -23,17 +23,23 @@ export const useStore = defineStore("store", () => {
 	}
 	function create() {
 		const recipe = newRecipe();
-		data.value.recipes.push(recipe);
-		useRouter().push({ path: "/" + recipe.id });
+		data.value?.recipes.push(recipe);
+		navigateTo({ path: "/" + recipe.id });
 	}
 
 	function deleteRecipe(id: string) {
+		if (!data.value) {
+			return;
+		}
 		data.value.recipes = data.value.recipes.filter((recipe) => recipe.id !== id);
 	}
 
 	function selectRecipe(id: string) {
-		currentRecipe.value = data.value.recipes.find((recipe) => recipe.id === id);
-		useRouter().push({ path: "/" + id });
+		if (!data.value) {
+			return;
+		}
+		currentRecipe.value = data.value.recipes.find((recipe) => recipe.id === id) || currentRecipe.value;
+		navigateTo({ path: "/" + id });
 	}
 
 	return { data, currentRecipe, save, load, create, deleteRecipe, selectRecipe };

@@ -1,5 +1,5 @@
 <template>
-	<section v-if="store.data.recipes.length" bg-gray-7 class="flex flex-col sm:py-4" sm:gap-4 shadow>
+	<section v-if="store.data?.recipes.length" bg-gray-7 class="flex flex-col sm:py-4" sm:gap-4 shadow>
 		<h1 px-4 cursor-pointer class="text-3xl text-gray-3" @click="toHome">Rezepte</h1>
 		<div
 			v-for="(recipe, i) in store.data.recipes"
@@ -43,13 +43,13 @@
 		if (window.confirm(`${recipe.name} löschen?`)) {
 			store.deleteRecipe(recipe.id);
 			store.currentRecipe = null;
-			useRouter().push({ path: "/" });
+			navigateTo({ path: "/" });
 		}
 	}
 
 	function toHome() {
 		store.currentRecipe = null;
 		emit("close");
-		useRouter().push("/");
+		navigateTo("/");
 	}
 </script>

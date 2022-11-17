@@ -5,7 +5,7 @@
 		<main v-if="!largeScreen" relative>
 			<section flex="~ row" items-start absolute top-0 z-10>
 				<MoeRecipeList v-if="listOpen" max-w-16rem min-h-90vh @close="listOpen = false" />
-				<button v-if="store.data.recipes.length">
+				<button v-if="store.data?.recipes.length">
 					<Icon
 						:name="listOpen ? 'fa:chevron-left' : 'fa:chevron-right'"
 						bg-gray-5
@@ -54,12 +54,12 @@
 				window.localStorage.setItem("id", queryId);
 				await store.load(queryId);
 			}
-			useRouter().push({ query: null });
+			navigateTo({ query: undefined });
 		}
 	}
 </script>
 
-<style>
+<style lang="postcss">
 	@import "@unocss/reset/tailwind.css";
 	@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lato&display=swap");
 
