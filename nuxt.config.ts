@@ -1,29 +1,8 @@
-import { presetAttributify, presetWind } from "unocss";
-import { presetScrollbar } from "unocss-preset-scrollbar";
 import { defineNuxtConfig } from "nuxt/config";
-import transformerDirectives from "@unocss/transformer-directives";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	modules: ["@pinia/nuxt", "@unocss/nuxt", "nuxt-icon", "@vueuse/nuxt"],
-	unocss: {
-		// presets
-		uno: true, // enabled `@unocss/preset-uno`
-		icons: true, // enabled `@unocss/preset-icons`
-		attributify: true, // enabled `@unocss/preset-attributify`,
-
-		// core options
-		shortcuts: [],
-		rules: [],
-		presets: [
-			presetWind(),
-			presetAttributify(),
-			presetScrollbar({
-				// config
-			}),
-		],
-		transformers: [transformerDirectives()],
-	},
 	vite: {},
 	experimental: {
 		writeEarlyHints: false,

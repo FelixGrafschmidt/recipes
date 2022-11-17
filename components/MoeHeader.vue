@@ -42,6 +42,7 @@
 
 	const home = computed(() => {
 		if (process.server) {
+			// How the hell do I find out whether or not it is an https request on the server?
 			const protocol = "http";
 			const hostname = useRequestHeaders().host;
 			return `${protocol}://${hostname}`;
