@@ -99,12 +99,12 @@
 	}
 	const store = useStore();
 
-	const content: Ref<HTMLElement> = ref(null);
+	const content: Ref<HTMLElement | null> = ref(null);
 
 	store.selectRecipe(useRoute().params.id.toString());
 
 	const editing = ref(false);
-	const editType: Ref<EditType> = ref(null);
+	const editType: Ref<EditType | null> = ref(null);
 	const editComponent = computed(() => {
 		switch (editType.value) {
 			case EditType.TAGS:
@@ -120,7 +120,7 @@
 
 	function edit(type: EditType) {
 		window.scrollTo({ top: 0 });
-		content.value.scrollTo({ top: 0 });
+		content.value?.scrollTo({ top: 0 });
 		document.body.classList.add("overflow-y-hidden");
 		editing.value = true;
 		editType.value = type;
