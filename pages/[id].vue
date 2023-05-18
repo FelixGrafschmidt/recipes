@@ -65,6 +65,7 @@
 		<section
 			v-if="editing"
 			max-h-80vh
+			z-1
 			p-4
 			absolute
 			top-16

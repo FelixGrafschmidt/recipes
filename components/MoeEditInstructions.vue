@@ -1,7 +1,7 @@
 <template>
 	<section px-2>
 		<draggable
-			:list="recipe.instructions"
+			:list="recipe!.instructions"
 			item-key="id"
 			:disabled="disabled"
 			handle=".handle"
@@ -13,7 +13,7 @@
 				<section class="flex flex-row">
 					<textarea
 						ref="textarea"
-						v-model="recipe.instructions[item.index]"
+						v-model="recipe!.instructions[item.index]"
 						focus:outline-none
 						class="bg-gray-7 rounded rounded-r-none p-1"
 						px-2
@@ -53,15 +53,15 @@
 	const recipe = store.currentRecipe;
 
 	function addInstruction() {
-		recipe.instructions.push("");
+		recipe!.instructions.push("");
 		nextTick(() => {
 			(textarea.value as HTMLTextAreaElement).focus();
 		});
 	}
 
 	function removeInstruction(index: number) {
-		recipe.instructions.splice(index, 1);
-		if (recipe.instructions.length === 0) {
+		recipe!.instructions.splice(index, 1);
+		if (recipe!.instructions.length === 0) {
 			disabled.value = false;
 		}
 	}

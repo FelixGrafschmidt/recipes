@@ -4,19 +4,19 @@
 			<MoeLogo text-teal-6 sm:h-16 sm:w-16 h-12 w-12 />
 		</nuxt-link>
 		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="save">
-			<span hidden sm:block>Alles speichern</span>
+			<span class="hidden sm:block">Alles speichern</span>
 			<span block sm:hidden flex="~ row" items-center>
 				<Icon name="fa:save" />
 			</span>
 		</button>
 		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="createNewRecipe">
-			<span hidden sm:block>Neues Rezept</span>
+			<span class="hidden sm:block">Neues Rezept</span>
 			<span block sm:hidden flex="~ row" items-center>
 				<Icon name="fa:plus" />
 			</span>
 		</button>
 		<button class="rounded-md bg-gray-6 px-2 h-8 text-gray-3 hover:bg-gray-5" @click="share">
-			<span hidden sm:block>Teilen</span>
+			<span class="hidden sm:block">Teilen</span>
 			<span block sm:hidden flex="~ row" items-center>
 				<Icon name="fa:share-alt" />
 			</span>
